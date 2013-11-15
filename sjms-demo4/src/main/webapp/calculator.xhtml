@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<title>Calculator</title>
+</head>
+<h:body>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputLabel value="Operand 1" for="op1" />
+            <h:inputText id="op1" value="#{operands.op1}"/>
+            <h:outputLabel value="Operand 2" for="op2" />
+            <h:inputText id="op2" value="#{operands.op2}"/>
+        </h:panelGrid>
+        
+        <h:commandButton value="Add" action="#{calculator.add}"/>
+        
+        <h:panelGroup rendered="#{not empty calculator.sum}">
+          <p>The result is #{calculator.sum}</p>
+        </h:panelGroup>
+
+    </h:form>
+</h:body>
+</html>
